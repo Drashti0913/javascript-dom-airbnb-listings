@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore 50 sample Airbnb listings loaded dynamically with the Fetch API."
+    />
+    <title>Roamly | Airbnb Listings Explorer</title>
+    <link rel="icon" href="./favicon.png" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="./js/app.js" type="module"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#listings">Skip to listings</a>
+    <header class="site-header">
+      <div class="shell nav-row">
+        <a class="brand" href="#top" aria-label="Roamly home"
+          ><span class="brand-mark" aria-hidden="true">R</span
+          ><span>roamly</span></a
+        >
+        <a class="nav-link" href="#about">About this project</a>
+      </div>
+    </header>
+    <main id="top">
+      <section class="hero shell" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">50 stays · eight destinations</p>
+          <h1 id="page-title">Find a stay that feels like yours.</h1>
+          <p>
+            Browse the first 50 records from MongoDB's sample Airbnb dataset.
+            Every card is created in the DOM after the JSON is fetched.
+          </p>
+        </div>
+        <div class="hero-note" aria-label="Project highlights">
+          <strong>Built with the browser</strong>
+          <span
+            >Vanilla HTML, CSS, JavaScript, Fetch API, and async/await.</span
+          >
+        </div>
+      </section>
+      <section class="controls-wrap shell" aria-label="Listing controls">
+        <div class="controls">
+          <label class="search-field"
+            ><span>Search stays</span
+            ><input
+              id="search"
+              type="search"
+              placeholder="Try Porto, wifi, or apartment"
+              autocomplete="off"
+          /></label>
+          <label
+            ><span>Destination</span
+            ><select id="country">
+              <option value="all">All countries</option>
+            </select></label
+          >
+          <label
+            ><span>Sort by</span
+            ><select id="sort">
+              <option value="recommended">Recommended</option>
+              <option value="price-low">Price: low to high</option>
+              <option value="price-high">Price: high to low</option>
+              <option value="rating">Highest rated</option>
+            </select></label
+          >
+          <label class="price-field"
+            ><span>Maximum price: <output id="price-output">Any</output></span
+            ><input
+              id="max-price"
+              type="range"
+              min="0"
+              max="3000"
+              step="50"
+              value="3000"
+          /></label>
+          <label class="check-field"
+            ><input id="favorites-only" type="checkbox" /><span
+              >Saved only</span
+            ></label
+          >
+        </div>
+        <div class="results-bar">
+          <p id="result-count" aria-live="polite">Loading listings…</p>
+          <button id="reset" class="text-button" type="button">
+            Reset filters
+          </button>
+        </div>
+      </section>
+      <section
+        id="listings"
+        class="listings-section shell"
+        aria-labelledby="listings-title"
+      >
+        <h2 id="listings-title" class="visually-hidden">Airbnb listings</h2>
+        <div id="status" class="status" role="status">
+          <span class="loader" aria-hidden="true"></span>
+          <p>Fetching the first 50 stays…</p>
+        </div>
+        <div id="listing-grid" class="listing-grid" aria-live="polite"></div>
+        <div id="empty-state" class="empty-state" hidden>
+          <span aria-hidden="true">⌂</span>
+          <h2>No stays match those filters</h2>
+          <p>Try a broader search or reset the filters.</p>
+          <button id="empty-reset" type="button">Show all stays</button>
+        </div>
+      </section>
+      <section id="about" class="about shell" aria-labelledby="about-title">
+        <p class="eyebrow">Creative addition</p>
+        <h2 id="about-title">More than a list of cards.</h2>
+        <div class="about-grid">
+          <p>
+            Search across names, descriptions, amenities, hosts, and locations;
+            combine filters; reorder results; and save favorites. Favorites are
+            stored in <code>localStorage</code>, so they remain after a refresh.
+          </p>
+          <p>
+            The interface also includes loading, empty, and error states, image
+            fallbacks, semantic landmarks, labeled controls, and
+            keyboard-friendly buttons.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="shell footer-row">
+        <p>
+          Created by Drashti Bhavsar for JavaScript &amp; DOM Self Assessment.
+        </p>
+        <p>Data: MongoDB Sample Airbnb Dataset</p>
+      </div>
+    </footer>
+  </body>
+</html>

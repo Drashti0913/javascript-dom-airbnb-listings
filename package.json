@@ -1,0 +1,23 @@
+{
+  "name": "roamly-airbnb-listings",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npx serve .",
+    "check": "eslint js/app.js && prettier --check index.html css/main.css js/app.js README.md"
+  },
+  "keywords": [],
+  "author": "Drashti Bhavsar",
+  "license": "MIT",
+  "description": "JavaScript and DOM self-assessment using the MongoDB sample Airbnb dataset.",
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "@html-eslint/eslint-plugin": "^0.32.0",
+    "@html-eslint/parser": "^0.32.0",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-html": "^8.1.2",
+    "globals": "^15.14.0",
+    "prettier": "^3.4.2"
+  }
+}
