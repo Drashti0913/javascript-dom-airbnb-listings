@@ -6,7 +6,7 @@ Fetch API and `async`/`await`, then creates every listing card through DOM APIs.
 
 ## Live deployment
 
-**GitHub Pages:** Add the deployment URL here after enabling Pages.
+**GitHub Pages:** (https://drashti0913.github.io/javascript-dom-airbnb-listings/)
 
 ## Assignment requirements
 
